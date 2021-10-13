@@ -24,8 +24,8 @@ xx = zeros(length(xTrain),dimension);
 for i=1:dimension
   xx(:,i) = xTrain.^(dimension-i);
 end
-model = pinv(xx)*yTrain;
-errTrain   = (1/(2*length(xTrain)))*sum((yTrain-xx*model).^2);
+model = pinv(xx)*yTrain; #hypothesis
+errTrain   = (1/(2*length(xTrain)))*sum((yTrain-xx*model).^2); #emperical risk
 
 if (nargin==5)
   xxT = zeros(length(xTest),dimension);
